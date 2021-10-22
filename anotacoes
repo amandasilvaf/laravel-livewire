@@ -31,4 +31,6 @@
             CLASS: app/Http/Livewire/NomeComponent.php
             VIEW: resources/views/livewire/nome-component.blade.php
 -----------------------------------------------------------------------------------------------------------
-
+3 - Paginacão
+    * Importar o WithPagination nos components que serão paginados;
+            use WithPagination (dentro da classe do component, e );

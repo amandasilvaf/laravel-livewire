@@ -22,7 +22,15 @@
     <hr>
     <h3>Tweets</h3>
     @foreach ($tweets as $tweet)
-        <p>User {{$tweet->user->name}} | Tweet: {{$tweet->content}}</p>
+
+        User {{$tweet->user->name}} | Tweet: {{$tweet->content}}
+
+        @if($tweet->likes->count())
+            <a href="">Deslike</a>
+        @else
+            <a href="">Like</a>
+        @endif
+        <hr>
     @endforeach
 
     <hr>

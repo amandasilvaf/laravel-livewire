@@ -22,7 +22,7 @@ class ListTweets extends Component
 
     public function render()
     {
-        $tweets = Tweet::with('user')->paginate(2);
+        $tweets = Tweet::with('user')->paginate(10);
         return view('livewire.list-tweets', compact('tweets'));
     }
 
