@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Tweet;
 use Livewire\Component;
 
 class ListTweets extends Component
@@ -11,6 +12,7 @@ class ListTweets extends Component
 
     public function render()
     {
-        return view('livewire.list-tweets');
+        $tweets = Tweet::with('user')->get();
+        return view('livewire.list-tweets', compact('tweets'));
     }
 }
