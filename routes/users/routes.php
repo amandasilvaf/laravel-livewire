@@ -47,4 +47,4 @@ Route::prefix('livewire')->group(function(){
     Route::get('/', [PostController::class, 'index'])->name('posts.index');
 });
 
-Route::get('tweets', ListTweets::class);
+// Route::post('tweets', ListTweets::class)->name('component');

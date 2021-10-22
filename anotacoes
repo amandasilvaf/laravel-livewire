@@ -30,3 +30,5 @@
             -> serão criados:   
             CLASS: app/Http/Livewire/NomeComponent.php
             VIEW: resources/views/livewire/nome-component.blade.php
+-----------------------------------------------------------------------------------------------------------
+
