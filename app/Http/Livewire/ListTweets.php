@@ -5,9 +5,12 @@ namespace App\Http\Livewire;
 use App\Models\Tweet;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class ListTweets extends Component
 {
+    use WithPagination;
+
     public $message = 'Oi, Livewire!!';
 
     public $content = 'valor do tweet';
@@ -19,7 +22,7 @@ class ListTweets extends Component
 
     public function render()
     {
-        $tweets = Tweet::with('user')->get();
+        $tweets = Tweet::with('user')->paginate(2);
         return view('livewire.list-tweets', compact('tweets'));
     }
 
