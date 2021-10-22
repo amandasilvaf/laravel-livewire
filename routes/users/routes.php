@@ -6,6 +6,7 @@ use App\Http\Controllers\Users\UsersController;
 use App\Http\Controllers\Users\ProfilesController;
 use App\Http\Controllers\Users\PermissionsController;
 use App\Http\Controllers\PostController;
+use App\Http\Livewire\ListTweets;
 
 Route::prefix('usuarios')->middleware('verify.permissions')->group(function () {
     Route::get('/', [UsersController::class, 'index'])->name('users');
@@ -45,3 +46,5 @@ Route::prefix('perfil')->group(function () {
 Route::prefix('livewire')->group(function(){
     Route::get('/', [PostController::class, 'index'])->name('posts.index');
 });
+
+Route::get('tweets', ListTweets::class);

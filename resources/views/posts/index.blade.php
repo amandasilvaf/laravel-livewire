@@ -15,7 +15,7 @@
                    
                 </div>
                 <div class="card-body">
-                    
+                    @livewire('list-tweets')
                 </div>    
             </div>
         </div>

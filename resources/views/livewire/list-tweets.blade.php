@@ -1,3 +1,10 @@
 <div>
-    {{-- A good traveler has no fixed plans and is not intent upon arriving. --}}
+
+    <h1 class="text-center">{{ $content }}</h1>
+    <hr>
+    <div class="form-group">
+        <label for="content" class="form-label">Novo valor para a variável content</label>
+        <input type="text" class="form-control" name="content" id="content" wire:model="content"></input>
+    </div>   
+
 </div>
