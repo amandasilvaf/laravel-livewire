@@ -25,4 +25,8 @@
                 ]
             }
 -------------------------------------------------------------------------------------------------------------
-
+2 - Criar component
+    * php artisan livewire:make NomeComponent
+            -> serão criados:   
+            CLASS: app/Http/Livewire/NomeComponent.php
+            VIEW: resources/views/livewire/nome-component.blade.php
