@@ -11,6 +11,9 @@
         @csrf
        <div class="form-group">
             <input type="text" class="form-control" name="content" id="content" wire:model="content" placeholder="Tweet"></input>
+            @error('content')
+                {{ $message }}
+            @enderror
             <button type="submit" class="btn btn-sm btn-primary">Tweetar</button>
        </div>
     </form>

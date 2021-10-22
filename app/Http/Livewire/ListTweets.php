@@ -12,6 +12,11 @@ class ListTweets extends Component
 
     public $content = 'valor do tweet';
 
+    protected $rules = [
+        'content' => 'required|min:3|max:255',
+
+    ];
+
     public function render()
     {
         $tweets = Tweet::with('user')->get();
@@ -22,6 +27,8 @@ class ListTweets extends Component
         //dd('ListTweets.create()');
         //dd($this->content);
         
+        $this -> validate();
+
         Tweet::create([
             'user_id' => Auth::id(),
             'content' => $this->content
