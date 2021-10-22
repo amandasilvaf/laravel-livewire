@@ -1,0 +1,28 @@
+## Laravel Livewire
+
+1- Instalação e configuração:
+    * Include PHP
+        * composer require livewire/livewire
+
+    * Include the JavaScript (on every page that will be using Livewire). -> layouts.app.blade.php
+        *  @livewireStyles -> antes do fechamento do </head>
+        *  @livewireScripts -> antes do fechamento do </body>
+            * incluir @livewire('nome-do-component)' na view blade em que for utilizá-lo. 
+                No caso deste exemplo, vou incluílo na view posts.index.blade.php -> dentro do card-body.
+
+    * Publishing The Config File
+        * php artisan livewire:publish --config
+
+    * Publishing Frontend Assets
+        * php artisan livewire:publish --assets
+
+    * Adding the command to the post-autoload-dump scripts in your composer.json file
+            "scripts": {
+                "post-autoload-dump": [
+                    "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+                    "@php artisan package:discover --ansi",
+                    "@php artisan vendor:publish --force --tag=livewire:assets --ansi" <----- ESSA LINHA
+                ]
+            }
+-------------------------------------------------------------------------------------------------------------
+

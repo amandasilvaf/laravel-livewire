@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\Users\UsersController;
 use App\Http\Controllers\Users\ProfilesController;
 use App\Http\Controllers\Users\PermissionsController;
+use App\Http\Controllers\PostController;
 
 Route::prefix('usuarios')->middleware('verify.permissions')->group(function () {
     Route::get('/', [UsersController::class, 'index'])->name('users');
@@ -38,4 +39,9 @@ Route::prefix('perfil')->group(function () {
     Route::post('/', [UserController::class, 'personalInfoUpdate'])->name('user.personal.update');
     Route::get('/alterar-senha', [UserController::class, 'userPassword'])->name('user.password');
     Route::post('/alterar-senha', [UserController::class, 'updatePassword'])->name('user.password.update');
+});
+
+
+Route::prefix('livewire')->group(function(){
+    Route::get('/', [PostController::class, 'index'])->name('posts.index');
 });

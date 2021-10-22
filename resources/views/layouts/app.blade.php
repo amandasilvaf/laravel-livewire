@@ -18,6 +18,7 @@
     <link href="{{ asset('assets/css/themes/layout/brand/dark.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/css/themes/layout/aside/dark.css') }}" rel="stylesheet" type="text/css" />
     @yield('css')
+    @livewireStyles
 </head>
 
 <body id="kt_body"
@@ -404,6 +405,7 @@
     <script src="{{ asset('assets/js/pages.bundle.js') }}"></script>
 
     @yield('js')
+    @livewireScripts
 </body>
 
 </html>
