@@ -26,14 +26,15 @@
         User {{$tweet->user->name}} | Tweet: {{$tweet->content}}
 
         @if($tweet->likes->count())
-            <a href="">Deslike</a>
+            <a href="#" wire:click.prevent="unlike({{$tweet->id}})">Deslike</a>
         @else
-            <a href="">Like</a>
+            <a href="#" wire:click.prevent="like({{$tweet->id}})" >Like</a>
         @endif
         <hr>
-    @endforeach
 
+    @endforeach
     <hr>
+
     <div>
         {{ $tweets->links() }}
     </div>

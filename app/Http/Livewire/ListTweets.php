@@ -39,4 +39,21 @@ class ListTweets extends Component
 
         $this->content = "";
     }
+
+    public function like($tweet_id)
+    {
+        $tweet = Tweet::find($tweet_id);
+
+        $tweet->likes()->create([
+            'user_id' => Auth::id()
+        ]);
+    }
+
+    public function unlike($tweet_id)
+    {
+        $tweet = Tweet::find($tweet_id);
+
+        $tweet->likes()->delete();
+    }
+
 }
